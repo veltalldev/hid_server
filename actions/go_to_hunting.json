@@ -1,0 +1,15 @@
+{
+  "name": "Go to Hunting Ground",
+  "description": "Opens menu and teleports to hunting ground",
+  "steps": [
+    {"type": "key", "key": "=", "hold_ms": 100},
+    {"type": "wait", "ms": 500},
+    {"type": "key", "key": "=", "hold_ms": 100},
+    {"type": "wait", "ms": 500},
+    {"type": "click", "x": 725, "y": 1075},
+    {"type": "wait", "ms": 1000},
+    {"type": "click", "x": 1180, "y": 986},
+    {"type": "wait", "ms": 5000},
+    {"type": "key", "key": "escape", "hold_ms": 100}
+  ]
+}

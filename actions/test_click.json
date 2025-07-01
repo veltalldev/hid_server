@@ -1,0 +1,7 @@
+{
+  "name": "Test Mouse Click",
+  "description": "Just click center screen for testing",
+  "steps": [
+    {"type": "click", "x": 1280, "y": 800}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Use All Consumables",
+  "description": "Opens inventory and double-clicks all consumable item slots",
+  "steps": [
+    {"type": "key", "key": "i", "hold_ms": 100},
+    {"type": "wait", "ms": 500},
+    {"type": "click", "x": 1538, "y": 600, "double": true},
+    {"type": "wait", "ms": 200},
+    {"type": "click", "x": 1435, "y": 600, "double": true},
+    {"type": "wait", "ms": 200},
+    {"type": "click", "x": 1360, "y": 600, "double": true},
+    {"type": "wait", "ms": 200},
+    {"type": "click", "x": 1360, "y": 525, "double": true},
+    {"type": "wait", "ms": 200},
+    {"type": "click", "x": 1435, "y": 525, "double": true},
+    {"type": "wait", "ms": 200},
+    {"type": "click", "x": 1538, "y": 525, "double": true},
+    {"type": "wait", "ms": 500},
+    {"type": "key", "key": "i", "hold_ms": 100}
+  ]
+}

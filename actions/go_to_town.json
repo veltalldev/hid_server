@@ -1,0 +1,11 @@
+{
+  "name": "Go to Town",
+  "description": "Opens menu and teleports to town",
+  "steps": [
+    {"type": "key", "key": "=", "hold_ms": 100},
+    {"type": "wait", "ms": 500},
+    {"type": "click", "x": 1150, "y": 642},
+    {"type": "wait", "ms": 5000},
+    {"type": "key", "key": "escape", "hold_ms": 100}
+  ]
+}

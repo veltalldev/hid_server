@@ -1,0 +1,7 @@
+{
+  "name": "Test Key Press",
+  "description": "Just press equals key for testing",
+  "steps": [
+    {"type": "key", "key": "=", "hold_ms": 100}
+  ]
+}
