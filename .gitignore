@@ -1,2 +1,37 @@
-__pycache__
-*venv*
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+hid_venv/
+.env
+.venv
+
+# SSL Certificates
+certs/
+*.pem
+*.key
+
+# Temporary files
+/tmp/
+temp_*.ahk
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test artifacts
+test/results/
