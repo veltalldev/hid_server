@@ -144,12 +144,14 @@ async def action_interact(
 @router.post("/action/movement/{direction}", response_model=MacroResponse)
 async def action_movement(
     direction: str,
-    step_size: str = "medium",
-    action_service: ActionService = Depends(get_action_service)
+    action_service: ActionService = Depends(get_action_service),
+    session_service: SessionService = Depends(get_session_service)
 ):
-    """Execute directional movement with step size"""
+    """Execute directional movement with step size from session"""
     try:
-        result = await action_service.movement(direction, step_size)
+        session_state = session_service.get_session_state()
+        step_size_multiplier = session_state.step_size
+        result = await action_service.movement(direction, step_size_multiplier)
         return MacroResponse(**result)
     except ActionExecutionError as e:
         raise HTTPException(

@@ -43,7 +43,7 @@ class ActionService:
     
     # === ENHANCED MOVEMENT WITH STEP SIZE ===
     
-    async def movement_with_step_size(self, direction: str, step_size_multiplier: float = 1.0) -> dict:
+    async def movement(self, direction: str, step_size_multiplier: float) -> dict:
         """Execute directional movement with step size multiplier"""
         valid_directions = ["up", "down", "left", "right"]
         if direction not in valid_directions:
@@ -134,47 +134,6 @@ class ActionService:
             return {"success": True, "message": "Interact executed"}
         except Exception as e:
             raise ActionExecutionError(f"Interact failed: {str(e)}")
-    
-    async def movement(self, direction: str, step_size: str = "medium") -> dict:
-        """Execute directional movement - CORRECTED step durations"""
-        valid_directions = ["up", "down", "left", "right"]
-        if direction not in valid_directions:
-            raise ActionExecutionError(
-                f"Invalid direction. Must be one of: {valid_directions}"
-            )
-        
-        # CORRECTED step durations: xs=100, s=300, m=1200, l=2000
-        step_durations = {
-            "xs": 100,      # Extra small
-            "small": 300,   # Small  
-            "medium": 1200, # Medium
-            "large": 2000   # Large
-        }
-        
-        # Accept both 's' and 'small' format
-        if step_size == "s":
-            step_size = "small"
-        elif step_size == "m":
-            step_size = "medium"
-        elif step_size == "l":
-            step_size = "large"
-        
-        if step_size not in step_durations:
-            raise ActionExecutionError(
-                f"Invalid step size. Must be one of: {list(step_durations.keys())}"
-            )
-        
-        try:
-            hold_duration = step_durations[step_size]
-            await self.hid_service.send_key(direction.title(), hold_duration)
-            await asyncio.sleep(0.1)  # Buffer from research doc
-            
-            return {
-                "success": True,
-                "message": f"{step_size.title()} {direction} movement executed"
-            }
-        except Exception as e:
-            raise ActionExecutionError(f"Movement failed: {str(e)}")
     
     # === UTILITY ACTIONS (Based on research documentation) ===
     
