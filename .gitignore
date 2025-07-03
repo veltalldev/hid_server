@@ -6,7 +6,7 @@ __pycache__/
 .Python
 env/
 venv/
-hid_venv/
+*venv*
 .env
 .venv
 
